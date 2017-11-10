@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+    engine:
+        volumes:
+            - remiii-symfonycon-cluj-2017-ws-symfony-4-best-practices_rsync-sync:/home/docker:rw # will be mounted on /var/www
+            - remiii-symfonycon-cluj-2017-ws-symfony-4-best-practices_app-cache:/home/docker/app/cache
+            - remiii-symfonycon-cluj-2017-ws-symfony-4-best-practices_app-logs:/home/docker/app/logs
+            - remiii-symfonycon-cluj-2017-ws-symfony-4-best-practices_vendor:/home/docker/vendor
+    db:
+        volumes:
+            - remiii-symfonycon-cluj-2017-ws-symfony-4-best-practices_var-lib-mysql:/var/lib/mysql
+
+volumes:
+    remiii-symfonycon-cluj-2017-ws-symfony-4-best-practices_rsync-sync:
+        external: true
+    remiii-symfonycon-cluj-2017-ws-symfony-4-best-practices_app-cache:
+    remiii-symfonycon-cluj-2017-ws-symfony-4-best-practices_app-logs:
+    remiii-symfonycon-cluj-2017-ws-symfony-4-best-practices_vendor:
+    remiii-symfonycon-cluj-2017-ws-symfony-4-best-practices_var-lib-mysql:
